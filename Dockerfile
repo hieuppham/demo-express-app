@@ -3,6 +3,7 @@ MAINTAINER hieupt
 WORKDIR app
 COPY package.json .
 COPY tsconfig.json .
+RUN ls
 RUN npm install
 RUN npm run build
 RUN ls
