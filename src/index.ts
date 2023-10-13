@@ -10,6 +10,11 @@ app.get("/about", (req, res) => {
     res.send("<h1>About page</h1>");
 });
 
+
+app.get("/bugs", (req, res) => {
+    res.send("<h1>Bugs page</h1>");
+});
+
 app.get("/partner", (req, res) => {
     res.send(`
     <h1>HienPT</h1>
