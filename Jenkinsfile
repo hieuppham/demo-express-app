@@ -4,10 +4,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // nodejs(nodeJSInstallationName: 'node_18_18_1') {
-                //     sh 'npm install'
-                //     sh 'npm run build'
-                // }
                 sh 'docker build -t demo-express-app:${BUILD_NUMBER} .'
             }
         }
