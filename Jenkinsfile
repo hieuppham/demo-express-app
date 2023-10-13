@@ -15,7 +15,7 @@ pipeline {
 
         stage('Run') {
             steps {
-                sh 'docker rm -f docker-express-app'
+                sh 'docker rm -f demo-express-app'
                 sh 'docker run -d --name demo-express-app -p 8099:8099 demo-express-app:${BUILD_NUMBER}'
             }
         }
