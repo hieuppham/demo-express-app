@@ -22,7 +22,10 @@ pipeline {
 
         stage('Health check') {
             steps {
-                sh 'curl localhost:8099'
+                retry(10) {
+                    sleep 15
+                    sh 'curl --fail --silent -i localhost:8099 | grep "200 OK" || exit 1'
+                }
             }
         }
     }
