@@ -1,22 +1,16 @@
-import express, { Express } from "express";
+import express, { Express, Request, Response } from "express";
 
 const app: Express = express();
 
-app.get("/", (req, res) => {
-    res.send("<h1>Home page</h1>");
+app.get('/ping', (req: Request, res: Response) => {
+    res.json({ message: 'Pong!' });
 });
 
-app.get("/about", (req, res) => {
-    res.send("<h1>About page</h1>");
+app.get('/whoiam', (req: Request, res: Response) => {
+    res.json({ message: 'hieuppham' });
 });
 
-
-app.get("/bugs", (req, res) => {
-    res.send("<h1>Bugs page</h1>");
-});
-
-
-const PORT = process.env.PORT || 8099;
+const PORT = process.env.PORT || 8080;
 
 const server = app.listen(PORT, () => {
     console.log("======================================\n");
