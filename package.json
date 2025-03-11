@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "npx nodemon src/index.ts",
     "start": "node build/index.js",
-    "start:detached": "pm2 start build/index.js",
+    "start:detached": "npx pm2 start build/index.js",
     "build": "npx tsc --project tsconfig.json"
   },
   "author": "",
