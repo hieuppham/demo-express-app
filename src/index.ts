@@ -22,17 +22,17 @@ const logger = winston.createLogger({
 const app: Express = express();
 
 app.get('/ping', (req: Request, res: Response) => {
-    logger.info("Received ping request");
-    res.json({ message: 'Pong!' });
+    logger.info("Received ping request 🏓🏓🏓🏓🏓🏓🏓🏓");
+    res.json({ message: 'Pong 🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓' });
 });
 
 app.get('/whoiam', (req: Request, res: Response) => {
-    logger.info("Received whoiam request");
-    res.json({ message: 'hieuppham' });
+    logger.info("Received whoiam request 😎😎😎😎😎😎😎😎😎😎😎😎");
+    res.json({ message: '😎😎😎😎😎😎😎😎' });
 });
 
 app.get('/check', (req: Request, res: Response) => {
-    logger.info("Received check");
+    logger.info("Received check 👍👍👍👍");
     res.json({ message: 'ok 👍👍👍👍👍👍' });
 });
 
