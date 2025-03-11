@@ -10,6 +10,10 @@ app.get('/whoiam', (req: Request, res: Response) => {
     res.json({ message: 'hieuppham' });
 });
 
+app.get('/check', (req: Request, res: Response) => {
+    res.json({ message: 'ok 👍👍👍👍👍👍' });
+});
+
 const PORT = process.env.PORT || 8080;
 
 const server = app.listen(PORT, () => {
