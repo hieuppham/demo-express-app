@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
+import 'dotenv/config'
 import winston from "winston";
-
+import LokiTransport from "winston-loki";
 
 const logger = winston.createLogger({
     transports: [
@@ -9,6 +10,12 @@ const logger = winston.createLogger({
                 winston.format.timestamp({format: "YYYY-MM-DD HH:mm:ss"}),
                 winston.format.colorize({level: true, all: true})
             )
+        }),
+        new LokiTransport({
+            host: process.env.LOKI_HOST!,
+            basicAuth: process.env.LOCKI_AUTH,
+            labels: {job: process.env.LOKI_LABEL},
+            onConnectionError: (error) => console.error(error)
         })
     ]
 });
@@ -29,7 +36,7 @@ app.get('/check', (req: Request, res: Response) => {
     res.json({ message: 'ok 👍👍👍👍👍👍' });
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
 const server = app.listen(PORT, () => {
     console.log("======================================\n");
