@@ -21,6 +21,15 @@ const logger = winston.createLogger({
 });
 const app: Express = express();
 
+app.get('/', (req: Request, res: Response) => {
+    res.json({ message: 'OK' });
+});
+
+
+app.get('/favicon.ico', (req: Request, res: Response) => {
+    res.status(200).sendFile("public/favicon.png", { root: "." });
+});
+
 app.get('/ping', (req: Request, res: Response) => {
     logger.info("Received ping request 🏓🏓🏓🏓🏓🏓🏓🏓");
     res.json({ message: 'Pong 🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓🏓' });
