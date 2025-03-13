@@ -6,8 +6,8 @@
       "name": "Installing Dependencies"
     },
     {
-      "name": "build",
-      "command": "npm run build"
+      "command": "npm run build",
+      "name": "Build project"
     }
   ],
 
@@ -15,8 +15,7 @@
   "tasks": {
     "start": {
       "name": "start",
-      "command": "npm run start",
-      "runAtStart": true
+      "command": "npm run start"
     }
   }
 }
